@@ -11,15 +11,9 @@
   <div class="container">
     <h1>Blog</h1>
     <ul>
-      <!-- @foreach ($names as $name)
-      <li><a href="">{{ $name->name }}</a></li>
-      @endforeach -->
 
-      @forelse ($names as $name)
-        <li><a href="">{{ $name->name }}</a></li>
-      @empty
-        <li>no data</li>
-      @endforelse
+
+      <li>hello heroku</li>
     </ul>
   </div>
 </body>
