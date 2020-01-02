@@ -9,8 +9,8 @@ class CategoriesController extends Controller
 {
     //
     public function index(){
-        // $names = Category::all();
-        return view('categories.index');
-        // , ['names' => $names]
+        $names = Category::all();
+        return view('categories.index', ['names' => $names]);
+        
     }
 }
