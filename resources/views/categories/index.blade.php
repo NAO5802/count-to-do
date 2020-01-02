@@ -11,8 +11,6 @@
   <div class="container">
     <h1>Blog</h1>
     <ul>
-
-
       <li>hello heroku</li>
     </ul>
   </div>

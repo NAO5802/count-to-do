@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
+    | Application Nameheroku config:set APP_KEY=$(php artisan key:generate --show)
     |--------------------------------------------------------------------------
     |
     | This value is the name of your application. This value is used when the
