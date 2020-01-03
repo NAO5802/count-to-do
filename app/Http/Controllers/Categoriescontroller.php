@@ -8,6 +8,13 @@ use App\Category;
 class CategoriesController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
     public function index(){
         $names = Category::all();
         return view('categories.index', ['names' => $names]);

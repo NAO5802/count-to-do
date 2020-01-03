@@ -11,4 +11,9 @@
 |
 */
 
+// Route::get('/', 'CategoriesController@index');
 Route::get('/', 'CategoriesController@index');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Count ToDo</title>
-  <link href="/css/style.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="js/style.js"></script>
-</head>
+@extends('layouts.app')
+
+@section('content')
 <body>
-  <div class="container">
+  <div class="contents">
     <h1>Blog</h1>
       <ul>
         @forelse ($names as $name)
@@ -19,3 +13,4 @@
     </ul>
   </div>
 </body>
+@endsection

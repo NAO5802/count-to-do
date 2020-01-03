@@ -1,6 +1,6 @@
-.container {
-  font-size: 20px;
-  background-color: aquamarine;
-}
-
 @import "reset";
+@import "variables";
+
+@import "shared";
+@import "header";
+@import "index";
