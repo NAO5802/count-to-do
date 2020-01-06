@@ -9,6 +9,7 @@
           <li><a href="{{ route('login') }}">ログイン</a></li>
           <li><a href="{{ route('register') }}">新規登録</a></li>
         @else
+          <li><a href="{{ action( 'TasksController@create' ) }}">追加</a></li>
           <li>
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
@@ -21,7 +22,6 @@
             </form>
           </li>
           <li><a href="{{ action( 'UsersController@edit', $user ) }}">ユーザー設定</a></li>
-          <li><a href="#">追加</a></li>
         @endguest
       </ul>
     </div>
