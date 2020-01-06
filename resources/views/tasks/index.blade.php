@@ -5,8 +5,8 @@
   <div class="contents">
     <h1>Blog</h1>
       <ul>
-        @forelse ($names as $name)
-        <li><a href="">{{ $name->name }}</a></li>
+        @forelse ($tasks as $task)
+        <li><a href="">{{ $task }}</a></li>
         @empty
         <li>no data</li>
         @endforelse

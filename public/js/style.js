@@ -1,7 +1,5 @@
 $(function(){
 
-  console.log('js imported');
-
   // ユーザー削除ボタン
   var userDeleteBtn = $('#user-delete');
   var userDeleteForm = $('#user-delete-form');
