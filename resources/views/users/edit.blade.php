@@ -53,12 +53,12 @@
             <div class="card">
                 <div class="card-header">{{ __('Delete') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ action('UsersController@destroy', $user) }}">
+                    <form method="POST" action="{{ action('UsersController@destroy', $user) }}" id="user-delete-form">
                         @csrf
                         {{ method_field('delete') }}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="user-delete" class="btn btn-primary" type="submit">
                                     {{ __('Delete account') }}
                                 </button>
                             </div>
