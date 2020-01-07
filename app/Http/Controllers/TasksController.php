@@ -18,7 +18,8 @@ class TasksController extends Controller
 
     public function index(){
         $user = Auth::user();
-        $tasks = Task::all();
+        $tasks = Task::where('finished', 'false')->get();
+        // $tasks = Task::all();
         return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user]);
     }
 
@@ -60,6 +61,12 @@ class TasksController extends Controller
 
     public function destroy(Task $task){
         $task->delete();
+        return redirect('/');
+    }
+
+    public function status(Task $task){
+        $task->finished = !$task->finished;
+        $task->save();
         return redirect('/');
     }
 

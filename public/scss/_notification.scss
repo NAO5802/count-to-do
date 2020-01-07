@@ -1,0 +1,13 @@
+.notification {
+  background-color: crimson;
+  position: fixed;
+  top: 60px;
+  z-index: 2;
+  width: 100vw;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 30px;
+  ul{
+    display: flex;
+  }
+}

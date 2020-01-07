@@ -31,10 +31,15 @@ $(function(){
       } else{
         window.alert('キャンセルしました'); 
       }
-  
     })
 
-  
+    // Task完了
+    var taskStatusBtn = $('.finish-btn');
 
+      taskStatusBtn.on('click', function(e){
+        e.preventDefault();
+        var taskId = $(this).attr('data-id')
+        $('#status_'+ taskId).submit();
+      });
 
 });

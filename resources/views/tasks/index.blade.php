@@ -5,12 +5,17 @@
     <h1>Blog</h1>
       <ul>
         @forelse ($tasks as $task)
-        <li>
-          {{ $task->kind }}：{{ $task->memo }}
-          <a href="{{ action('TasksController@edit', $task ) }}">edit</a>
-        </li>
+          <li class="task-card">
+              {{ $task->kind }}：{{ $task->memo }}
+              <a href="{{ action('TasksController@edit', $task ) }}">edit</a>
+              <a class="finish-btn" data-id="{{ $task->id }}" >finish</a>
+              <form method='POST' id="status_{{ $task->id }}" action="{{ action('TasksController@status', $task) }}" style="display: none">
+                @csrf 
+                {{ method_field('patch')}}
+              </form>
+          </li>
         @empty
-        <li>no data</li>
+          <li>no task</li>
         @endforelse
     </ul>
   </div>
