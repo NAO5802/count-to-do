@@ -39,4 +39,23 @@ class TasksController extends Controller
         $task->save();
         return redirect('/');
     }
+
+    public function edit(Task $task){
+        $user = Auth::user();
+        $kinds = TaskKind::toSelectArray();
+
+        return view('tasks.edit', ['task' => $task, 'user' => $user, 'kinds' => $kinds]);
+    }
+
+    public function update(Request $request, Task $task){
+        $this->validate($request, [
+            'kind' => 'required',
+        ]);
+        $task->kind = $request->kind;
+        $task->memo = $request->memo;
+        $task->user_id = Auth::user()->id;
+        $task->save();
+        return redirect('/');
+    }
+
 } 

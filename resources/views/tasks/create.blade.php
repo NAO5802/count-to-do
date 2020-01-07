@@ -6,9 +6,11 @@
   @csrf
   <ul>
     <li>
-      <select name="kind" value="{{  old('kind') }}">
+      <select name="kind">
         @foreach($kinds as $key => $value)
-            <option value="{{ $key }}">{{ $value }}</option>
+            <option value="{{ $key }}" @if(old('kind') == $key) selected @endif >
+              {{ $value }}
+            </option>
         @endforeach
         @if ($errors->has('kind'))
           <span>{{ $errors->first('kind') }}</span>
