@@ -26,4 +26,13 @@
     </li>
   </ul>
 </form>
+
+<h1>Task 削除</h1>
+<form method="POST" action="{{ action('TasksController@destroy', $task) }}" id="task-delete-form">
+@csrf
+  {{ method_field('delete') }}
+  <button id="task-delete" type="submit">
+    Delete
+  </button>
+</form>
 @endsection
