@@ -18,8 +18,7 @@ class TasksController extends Controller
 
     public function index(){
         $user = Auth::user();
-        $tasks = Task::where('finished', 'false')->get();
-        // $tasks = Task::all();
+        $tasks = Task::where('finished', 'false')->orderBy('created_at', 'desc')->get();
         return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user]);
     }
 
@@ -44,7 +43,6 @@ class TasksController extends Controller
     public function edit(Task $task){
         $user = Auth::user();
         $kinds = TaskKind::toSelectArray();
-
         return view('tasks.edit', ['task' => $task, 'user' => $user, 'kinds' => $kinds]);
     }
 

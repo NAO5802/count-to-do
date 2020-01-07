@@ -20,5 +20,6 @@ final class TaskKind extends Enum  implements LocalizedEnum
     const EXPENSE = 'expense';
     const CONFIRM = 'confirm';
     const OTHER = 'other';
+
 }
 
