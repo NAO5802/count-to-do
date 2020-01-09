@@ -20,6 +20,7 @@ Route::delete('/tasks/{task}', 'TasksController@destroy');
 Route::patch('/tasks/{task}/status', 'TasksController@status');
 
 
+Route::get('users/{user}/show', 'UsersController@show');
 Route::get('/users/{user}/edit', 'UsersController@edit');
 Route::patch('/users/{user}', 'UsersController@update');
 Route::delete('users/{user}', 'UsersController@destroy');

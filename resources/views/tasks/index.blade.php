@@ -6,7 +6,7 @@
       <ul>
         @forelse ($tasks as $task)
           <li class="task-card">
-            {{ App\Enums\TaskKind::getDescription($task->kind)}}：{{ $task->memo }}
+            {{ App\Enums\TaskKind::getDescription($task->kind) }}：{{ $task->memo }}
               <a href="{{ action('TasksController@edit', $task ) }}">edit</a>
               <a class="finish-btn" data-id="{{ $task->id }}" >finish</a>
               <form method='POST' id="status_{{ $task->id }}" action="{{ action('TasksController@status', $task) }}" style="display: none">

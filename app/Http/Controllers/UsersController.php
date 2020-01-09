@@ -7,9 +7,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use App\User;
 
+use App\Enums\TaskKind;
+use App\Task;
+
+
 
 class UsersController extends Controller
 {
+
+    public function show(User $user){
+        $kinds = TaskKind::getValues();
+
+        $tasks = Task::where('finished', true)->where('user_id', $user->id)->get();
+        $counts = [];
+        foreach ($kinds as $kind) {
+            array_push($counts, $tasks->where('kind', $kind)->count());
+        }
+
+        return view('users.show', ['kinds' => $kinds,'counts' => $counts, 'tasks' => $tasks, 'user'=> $user]);
+    }
     
     public function edit(User $user){
         return view('users.edit')->with('user', $user);

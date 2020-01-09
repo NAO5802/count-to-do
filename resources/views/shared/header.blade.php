@@ -10,6 +10,7 @@
           <li><a href="{{ route('register') }}">新規登録</a></li>
         @else
           <li><a href="{{ action( 'TasksController@create' ) }}">追加</a></li>
+          <li><a href="{{ action( 'UsersController@show', $user ) }}">Task集計</a></li>
           <li>
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
