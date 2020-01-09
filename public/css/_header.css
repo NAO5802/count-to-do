@@ -2,14 +2,13 @@
   position: fixed;
   top: 0;
   z-index: 2;
-  background-color: blueviolet;
   width: 100vw;
   height: 60px;
   line-height: 60px;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-between;
 }
-.header-right ul {
-  display: flex;
+.header-link {
+  color: white;
+}
+.header-link:hover {
+  color: #0096a7;
 }

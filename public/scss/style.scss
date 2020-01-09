@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'mplus';
+  src: url('{{ public_path('fonts/mplus-2p-regular.ttf') }}'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 @import "reset";
 @import "variables";
 

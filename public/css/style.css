@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'mplus';
+  src: url('{{ public_path('fonts/mplus-2p-regular.ttf') }}');
+  font-weight: normal;
+  font-style: normal;
+}
 /*!
  * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
  * http://cssreset.com
@@ -73,22 +79,29 @@ input, textarea, select {
   box-sizing: border-box;
 }
 .wrapper {
-  padding-top: calc(60px + 30px);
+  padding-top: 60px;
+  font-family: 'mplus';
+  letter-spacing: 1px;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.bg-skyblueD {
+  background-color: #00bcd1;
 }
 .header {
   position: fixed;
   top: 0;
   z-index: 2;
-  background-color: blueviolet;
   width: 100vw;
   height: 60px;
   line-height: 60px;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-between;
 }
-.header-right ul {
-  display: flex;
+.header-link {
+  color: white;
+}
+.header-link:hover {
+  color: #0096a7;
 }
 .notification {
   background-color: crimson;

@@ -2,5 +2,13 @@
   box-sizing: border-box;
 }
 .wrapper {
-  padding-top: calc(60px + 30px);
+  padding-top: 60px;
+  font-family: 'mplus';
+  letter-spacing: 1px;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.bg-skyblueD {
+  background-color: ;
 }
