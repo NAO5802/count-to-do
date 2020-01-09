@@ -103,20 +103,10 @@ input, textarea, select {
 .header-link:hover {
   color: #0096a7;
 }
-.notification {
-  background-color: crimson;
-  position: fixed;
-  top: 60px;
-  z-index: 2;
-  width: 100vw;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 30px;
-}
-.notification ul {
-  display: flex;
-}
 .task-card {
   background-color: coral;
   margin-bottom: 10px;
+}
+.user-box {
+  padding-top: 80px;
 }

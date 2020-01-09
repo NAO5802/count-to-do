@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container user-box">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -50,7 +50,7 @@
                     </form>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">{{ __('Delete') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ action('UsersController@destroy', $user) }}" id="user-delete-form">
