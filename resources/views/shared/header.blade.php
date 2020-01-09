@@ -8,7 +8,10 @@
           <div><a class="header-link text-decoration-none mr-3" href="{{ route('login') }}">ログイン</a></div>
           <div><a class="header-link text-decoration-none " href="{{ route('register') }}">新規登録</a></div>
         @else
-          <div><a href="{{ action( 'TasksController@create' ) }}"><i class="fas fa-plus h4 mr-4 header-link"></i></a></div>
+        <!-- タスク追加 modal -->
+          <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+          <i class="fas fa-plus h4 mr-2 mt-1 header-link"></i>
+          </button>
           <div class="dropdown">
             <a class="btn dropdown-toggle p-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-bars h4 header-link mb-2"></i>

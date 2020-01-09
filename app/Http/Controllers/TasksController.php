@@ -18,14 +18,9 @@ class TasksController extends Controller
 
     public function index(){
         $user = Auth::user();
-        $tasks = Task::where('finished', false)->where('user_id', $user->id )->orderBy('created_at', 'desc')->get();
-        return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user]);
-    }
-
-    public function create(){
-        $user = Auth::user();
         $kinds = TaskKind::toSelectArray();
-        return view('tasks.create', ['user' => $user, 'kinds' => $kinds] );
+        $tasks = Task::where('finished', false)->where('user_id', $user->id )->orderBy('created_at', 'desc')->get();
+        return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user, 'kinds' => $kinds]);
     }
 
     public function store(Request $request){
