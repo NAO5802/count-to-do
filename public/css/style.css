@@ -82,6 +82,7 @@ input, textarea, select {
   padding-top: 60px;
   font-family: 'mplus';
   letter-spacing: 1px;
+  color: #194951;
 }
 .dropdown-toggle::after {
   display: none;
@@ -103,9 +104,22 @@ input, textarea, select {
 .header-link:hover {
   color: #0096a7;
 }
-.task-card {
-  background-color: coral;
-  margin-bottom: 10px;
+.card-body__kind {
+  background-color: #f7d54e;
+  min-width: 120px;
+  height: 2.2em;
+  text-align: center;
+  padding: 6px 15px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.card-link:hover {
+  color: #b900ad;
 }
 .user-box {
   padding-top: 80px;

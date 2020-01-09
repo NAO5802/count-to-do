@@ -1,4 +1,17 @@
-.task-card {
-  background-color: coral;
-  margin-bottom: 10px;
+.card-body__kind {
+  background-color: ;
+  min-width: 120px;
+  height: 2.2em;
+  text-align: center;
+  padding: 6px 15px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.card-link:hover {
+  color: #b900ad;
 }
