@@ -20,8 +20,6 @@
             <!-- タスク編集 modal -->
             <button type="button" class="btn card-link edit-btn"  data-toggle="modal" data-target="#editModal_{{ $task->id }}">edit</button>
 
-            <!-- <a  class="card-link" href="{{ action('TasksController@edit', $task ) }}">edit</a> -->
-
             <button class="finish-btn btn card-link ml-0" data-id="{{ $task->id }}" >finish</button>
               <form method='POST' id="status_{{ $task->id }}" action="{{ action('TasksController@status', $task) }}" style="display: none">
               @csrf 
