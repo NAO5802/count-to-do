@@ -87,9 +87,6 @@ input, textarea, select {
 .dropdown-toggle::after {
   display: none;
 }
-.bg-skyblueD {
-  background-color: #00bcd1;
-}
 .header {
   position: fixed;
   top: 0;
@@ -97,6 +94,7 @@ input, textarea, select {
   width: 100vw;
   height: 60px;
   line-height: 60px;
+  background-color: #00bcd1;
 }
 .header-link {
   color: white;
@@ -142,6 +140,6 @@ input, textarea, select {
   font-size: 14px;
 }
 .table-header {
-  background-color: #007886;
+  background-color: #0096a7;
   color: white;
 }

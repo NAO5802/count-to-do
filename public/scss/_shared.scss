@@ -6,14 +6,12 @@
   padding-top: 60px;
   font-family: 'mplus';
   letter-spacing: 1px;
-  color: #194951;
+  color: $text;
 }
 
 .dropdown-toggle::after {
   display:none;
 }
 
-.bg-skyblueD {
-  background-color: $skyblueD;
-}
+
 

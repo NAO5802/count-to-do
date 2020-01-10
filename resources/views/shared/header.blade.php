@@ -1,4 +1,4 @@
-<div class="header shadow-sm px-3 bg-skyblueD d-flex justify-content-between">
+<div class="header shadow-sm px-3 d-flex justify-content-between">
   <div class="header-left">
     <a href="{{ url('/') }}" class="text-decoration-none h5 header-link">Count ToDo</a>
   </div>

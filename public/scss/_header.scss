@@ -5,12 +5,13 @@
   width: 100vw;
   height: 60px;
   line-height: 60px;
+  background-color: $skyblue;
 }
 
 .header-link {
   color: white;
   &:hover{
-    color: #0096a7;
+    color: $skyblueD;
   }
 }
 

@@ -5,10 +5,11 @@
   width: 100vw;
   height: 60px;
   line-height: 60px;
+  background-color: ;
 }
 .header-link {
   color: white;
 }
 .header-link:hover {
-  color: #0096a7;
+  color: ;
 }
