@@ -1,22 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Task 完了回数</h1>
-    <table border="1">
-      @if ($tasks)
-
-        @foreach (array_map(null, $kinds, $counts) as [$kind, $count])
+<div class="container pt-5"> 
+  <h4 class="font-weight-bold h4">Finised Tasks</h4>
+  @if ($tasks)
+  <p class="mt-3 mb-2 float-right user-label">User name： {{$user->name}}</p>
+  <table class="table table-striped mt-3 text-center">
+    <thead>
+      <tr class="table-header">
+        <th class="text-center" scope="col">種類</th>
+        <th class="text-center" scope="col">完了回数</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (array_map(null, $kinds, $counts) as [$kind, $count])
         <tr>
-            <th>{{ App\Enums\TaskKind::getDescription($kind) }}</th>
-            <td>{{ $count }}回</td>
+          <td>{{ App\Enums\TaskKind::getDescription($kind) }}</td>
+          <td>{{ $count }} 回</td>
         </tr>
-        @endforeach
-        <tr>
-          <th>合計</th>
-          <td>{{ count($tasks) }}回</td>
-        </tr>
-      @else
-        <span>no task</span>
-      @endif
-    </table>
+      @endforeach
+      <tr class="font-weight-bold h5">
+        <td>合計</td>
+        <td>{{ count($tasks) }} 回</td>
+      </tr>
+    </tbody>
+  </table>
+  @else
+    <p class="mt-4">{{$user->name}} さんの完了済みTaskはありません</p>
+  @endif
+</div>
 @endsection

@@ -20,8 +20,10 @@ class UsersController extends Controller
 
         $tasks = Task::where('finished', true)->where('user_id', $user->id)->get();
         $counts = [];
-        foreach ($kinds as $kind) {
-            array_push($counts, $tasks->where('kind', $kind)->count());
+        if ($tasks) {
+            foreach ($kinds as $kind) {
+                array_push($counts, $tasks->where('kind', $kind)->count());
+            }
         }
 
         return view('users.show', ['kinds' => $kinds,'counts' => $counts, 'tasks' => $tasks, 'user'=> $user]);

@@ -1,3 +1,14 @@
 .user-box {
   padding-top: 80px;
 }
+.user-label {
+  background-color: ;
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 7px;
+  font-size: 14px;
+}
+.table-header {
+  background-color: #007886;
+  color: white;
+}

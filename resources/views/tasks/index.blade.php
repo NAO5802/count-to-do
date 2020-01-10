@@ -6,7 +6,7 @@
 @include('shared/addModal')
 
   <div class="container pt-5">
-    <span class="font-weight-bold h4">All Tasks</span>
+    <h4 class="font-weight-bold h4">All Tasks</h4>
     <div class="card-wrapper mt-4">
       @forelse ($tasks as $task)
       @include('shared/editModal')
