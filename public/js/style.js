@@ -18,16 +18,16 @@ $(function(){
   })
 
     // Task削除ボタン
-    var taskDeleteBtn = $('#task-delete');
-    var taskDeleteForm = $('#task-delete-form');
+    var taskDeleteBtn = $('.task-delete');
   
     taskDeleteBtn.on('click', function(e){
       e.preventDefault();
 
       var result = window.confirm('タスクを削除します。\nよろしいですか?');
+      var deleteId = $(this).data('id');
 
       if(result) {
-        taskDeleteForm.submit();
+        $('#task-delete-form_'+deleteId).submit();
       } else{
         window.alert('キャンセルしました'); 
       }

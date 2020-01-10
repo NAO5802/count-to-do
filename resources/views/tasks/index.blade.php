@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
+
+
 @section('content')
+@include('shared/addModal')
+
   <div class="container pt-5">
     <span class="font-weight-bold h4">All Tasks</span>
     <div class="card-wrapper mt-4">
       @forelse ($tasks as $task)
+      @include('shared/editModal')
       <div class="card mb-3">
         <div class="card-body d-flex justify-content-between">
           <div class="card-body__left d-flex">
@@ -12,8 +17,12 @@
             <div class="card-body__memo mr-3">{{ $task->memo }}</div>
           </div>
           <div class="card-body__right d-flex">
-            <a  class="card-link" href="{{ action('TasksController@edit', $task ) }}">edit</a>
-            <span class="finish-btn card-link ml-2" data-id="{{ $task->id }}" >finish</span>
+            <!-- タスク編集 modal -->
+            <button type="button" class="btn card-link edit-btn"  data-toggle="modal" data-target="#editModal_{{ $task->id }}">edit</button>
+
+            <!-- <a  class="card-link" href="{{ action('TasksController@edit', $task ) }}">edit</a> -->
+
+            <button class="finish-btn btn card-link ml-0" data-id="{{ $task->id }}" >finish</button>
               <form method='POST' id="status_{{ $task->id }}" action="{{ action('TasksController@status', $task) }}" style="display: none">
               @csrf 
               {{ method_field('patch')}}

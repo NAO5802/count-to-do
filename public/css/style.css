@@ -104,6 +104,9 @@ input, textarea, select {
 .header-link:hover {
   color: #0096a7;
 }
+.card-body {
+  position: relative;
+}
 .card-body__kind {
   background-color: #f7d54e;
   min-width: 120px;
@@ -112,6 +115,13 @@ input, textarea, select {
   padding: 6px 15px;
   border-radius: 25px;
   font-size: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card-body__memo {
+  margin-left: 140px;
+  padding: 7px 0;
 }
 .card-link {
   text-decoration: none;

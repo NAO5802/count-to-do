@@ -1,6 +1,7 @@
 // ****index****
 
 .card-body {
+  position: relative;
   &__kind{
     background-color: $yellow;
     min-width: 120px;
@@ -9,6 +10,13 @@
     padding: 6px 15px;
     border-radius: 25px;
     font-size: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__memo {
+    margin-left: 140px;
+    padding:  7px 0;
   }
 }
 
