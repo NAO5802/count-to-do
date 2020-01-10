@@ -25,9 +25,6 @@
                       {{ $value }}
                     </option>
                 @endforeach
-                @if ($errors->has('kind'))
-                  <span>{{ $errors->first('kind') }}</span>
-                @endif
               </select>
             </div>
             <div class="modal-body__memo mb-4">
