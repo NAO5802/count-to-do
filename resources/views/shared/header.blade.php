@@ -1,3 +1,7 @@
+<!-- タスク追加 modal -->
+@auth
+  @include('shared/addModal')
+@endauth
 
 <div class="header shadow-sm px-3 d-flex justify-content-between">
   <div class="header-left">
@@ -9,8 +13,6 @@
           <div><a class="header-link text-decoration-none mr-3" href="{{ route('login') }}">ログイン</a></div>
           <div><a class="header-link text-decoration-none " href="{{ route('register') }}">新規登録</a></div>
         @else
-          <!-- タスク追加 modal -->
-          @include('shared/addModal')
           <button type="button" class="btn" data-toggle="modal" data-target="#addModal">
           <i class="fas fa-plus h4 mr-2 mt-1 header-link"></i>
           </button>
