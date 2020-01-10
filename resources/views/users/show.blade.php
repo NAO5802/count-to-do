@@ -3,7 +3,7 @@
 @section('content')
 <div class="container pt-5"> 
   <h4 class="font-weight-bold h4">Finised Tasks</h4>
-  @if ($tasks)
+  @if (isset($tasks[0]))
   <p class="mt-3 mb-2 float-right user-label">User name： {{$user->name}}</p>
   <table class="table table-striped mt-3 text-center">
     <thead>

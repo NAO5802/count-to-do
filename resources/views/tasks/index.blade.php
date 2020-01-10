@@ -4,6 +4,12 @@
 
 @section('content')
 @include('shared/addModal')
+    <!-- フラッシュメッセージ -->
+    @if (session('alert_message'))
+        <div class="alert_message alert alert-danger" role="alert">
+            {{ session('alert_message') }}
+        </div>
+    @endif
 
   <div class="container pt-5">
     <h4 class="font-weight-bold h4">All Tasks</h4>

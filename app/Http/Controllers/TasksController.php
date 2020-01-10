@@ -42,19 +42,35 @@ class TasksController extends Controller
         ]);
         $task->kind = $request->kind;
         $task->memo = $request->memo;
-        $task->user_id = Auth::user()->id;
-        $task->save();
+
+        if (Auth::user()->id == $task->user_id){
+            $task->save();
+        }else{
+            return redirect ('/')->with('alert_message', '不正なアクセスです');
+        }
+
         return redirect('/');
     }
 
     public function destroy(Task $task){
-        $task->delete();
+
+        if (Auth::user()->id == $task->user_id){
+            $task->delete();
+        }else{
+            return redirect ('/')->with('alert_message', '不正なアクセスです');
+        }
         return redirect('/');
     }
 
     public function status(Task $task){
         $task->finished = !$task->finished;
-        $task->save();
+
+        if (Auth::user()->id == $task->user_id){
+            $task->save();
+        }else{
+            return redirect ('/')->with('alert_message', '不正なアクセスです');
+        }
+
         return redirect('/');
     }
 

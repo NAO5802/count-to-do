@@ -16,21 +16,31 @@ class UsersController extends Controller
 {
 
     public function show(User $user){
-        $kinds = TaskKind::getValues();
 
+    if (Auth::user()->id == $user->id){
+        
+        $kinds = TaskKind::getValues();
+    
         $tasks = Task::where('finished', true)->where('user_id', $user->id)->get();
         $counts = [];
-        if ($tasks) {
             foreach ($kinds as $kind) {
                 array_push($counts, $tasks->where('kind', $kind)->count());
             }
-        }
-
+    
         return view('users.show', ['kinds' => $kinds,'counts' => $counts, 'tasks' => $tasks, 'user'=> $user]);
+
+    }else{
+        return redirect ('/')->with('alert_message', '不正なアクセスです');
+    }
+
     }
     
     public function edit(User $user){
-        return view('users.edit')->with('user', $user);
+        if (Auth::user()->id == $user->id){
+            return view('users.edit')->with('user', $user);
+        }else{
+            return redirect ('/')->with('alert_message', '不正なアクセスです');
+        }
     }
 
     public function update(Request $request, User $user){
@@ -40,12 +50,23 @@ class UsersController extends Controller
         ]);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->save();
+
+        if (Auth::user()->id == $user->id){
+            $user->save();
+        }else{
+            return redirect ('/')->with('alert_message', '不正なアクセスです');
+        }
+
         return redirect('/');
     }
 
     public function destroy(User $user){
-        $user->delete();
+        if (Auth::user()->id == $user->id){
+            $user->delete();
+        }else{
+            return redirect ('/')->with('alert_message', '不正なアクセスです');
+        }
         return redirect('/');
     }
 }
+

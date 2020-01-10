@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Edit') }}</div>
+                <div class="card-header">{{ __('ユーザー情報編集') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ action('UsersController@update', $user) }}">
@@ -51,14 +51,14 @@
                 </div>
             </div>
             <div class="card mt-5">
-                <div class="card-header">{{ __('Delete') }}</div>
+                <div class="card-header">{{ __('アカウント削除') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ action('UsersController@destroy', $user) }}" id="user-delete-form">
                         @csrf
                         {{ method_field('delete') }}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button id="user-delete" class="btn btn-primary" type="submit">
+                                <button id="user-delete" class="btn btn-secondary" type="submit">
                                     {{ __('Delete account') }}
                                 </button>
                             </div>
