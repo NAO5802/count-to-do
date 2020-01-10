@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pt-5"> 
+<div class="container pt-5 pb-5"> 
   <h4 class="font-weight-bold h4">Finised Tasks</h4>
   @if (isset($tasks[0]))
   <p class="mt-3 mb-2 float-right user-label">User name： {{$user->name}}</p>
@@ -13,9 +13,9 @@
       </tr>
     </thead>
     <tbody>
-      @foreach (array_map(null, $kinds, $counts) as [$kind, $count])
+      @foreach (array_map(null, $kind_vals, $counts) as [$kind_val, $count])
         <tr>
-          <td>{{ App\Enums\TaskKind::getDescription($kind) }}</td>
+          <td>{{ App\Enums\TaskKind::getDescription($kind_val) }}</td>
           <td>{{ $count }} 回</td>
         </tr>
       @endforeach

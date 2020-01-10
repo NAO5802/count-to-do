@@ -3,7 +3,6 @@
 
 
 @section('content')
-@include('shared/addModal')
     <!-- フラッシュメッセージ -->
     @if (session('alert_message'))
         <div class="alert_message alert alert-danger" role="alert">
