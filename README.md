@@ -12,7 +12,7 @@
 ## tasksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|enum|null: false|
+|kind|enum|null: false|
 |memo|text| |
 |finished|boolean|default: false|
 |user_id|foreign| |
