@@ -19,7 +19,7 @@
         <div class="card-body d-flex justify-content-between">
           <div class="card-body__left d-flex">
             <div class="card-body__kind mr-3">{{ App\Enums\TaskKind::getDescription($task->kind) }}</div>
-            <div class="card-body__memo mr-3">{{ $task->memo }}</div>
+            <div class="card-body__memo mr-3">{!! nl2br(e($task->memo)) !!}</div>
           </div>
           <div class="card-body__right d-flex">
             <!-- タスク編集 modal -->
