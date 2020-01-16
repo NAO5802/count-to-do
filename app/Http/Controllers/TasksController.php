@@ -21,7 +21,9 @@ class TasksController extends Controller
         $user = Auth::user();
         $kinds = TaskKind::toSelectArray();
         $tasks = Task::where('finished', false)->where('user_id', $user->id )->orderBy('created_at', 'desc')->get();
-        return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user, 'kinds' => $kinds]);
+        // return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user, 'kinds' => $kinds]);
+        return view( 'tasks.index', compact('tasks', 'user', 'kinds'));
+
     }
 
     public function store(TaskRequest $request){

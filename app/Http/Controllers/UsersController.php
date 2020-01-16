@@ -28,8 +28,8 @@ class UsersController extends Controller
                 array_push($counts, $tasks->where('kind', $kind_val)->count());
             }
     
-        return view('users.show', ['kind_vals' => $kind_vals ,'kinds' => $kinds,'counts' => $counts, 'tasks' => $tasks, 'user'=> $user]);
-
+        // return view('users.show', ['kind_vals' => $kind_vals ,'kinds' => $kinds,'counts' => $counts, 'tasks' => $tasks, 'user'=> $user]);
+        return view('users.show', compact('kind_vals', 'kinds', 'counts', 'tasks', 'user'));
     }else{
         return redirect ('/')->with('alert_message', '不正なアクセスです');
     }
