@@ -21,14 +21,12 @@ class UsersController extends Controller
         
         $kinds = TaskKind::toSelectArray();
         $kind_vals = TaskKind::getValues();
-    
         $tasks = Task::where('finished', true)->where('user_id', $user->id)->get();
         $counts = [];
             foreach ($kind_vals as $kind_val) {
                 array_push($counts, $tasks->where('kind', $kind_val)->count());
             }
     
-        // return view('users.show', ['kind_vals' => $kind_vals ,'kinds' => $kinds,'counts' => $counts, 'tasks' => $tasks, 'user'=> $user]);
         return view('users.show', compact('kind_vals', 'kinds', 'counts', 'tasks', 'user'));
     }else{
         return redirect ('/')->with('alert_message', '不正なアクセスです');
@@ -40,7 +38,7 @@ class UsersController extends Controller
         $kinds = TaskKind::toSelectArray();
 
         if (Auth::user()->id == $user->id){
-            return view('users.edit', ['user' => $user, 'kinds' => $kinds]);
+            return view('users.edit', compact('user', 'kinds'));
         }else{
             return redirect ('/')->with('alert_message', '不正なアクセスです');
         }
