@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Enums\TaskKind;
 use App\Task;
+use App\Http\Requests\TaskRequest;
 
 
 class TasksController extends Controller
@@ -23,10 +24,7 @@ class TasksController extends Controller
         return view( 'tasks.index', ['tasks' => $tasks, 'user' => $user, 'kinds' => $kinds]);
     }
 
-    public function store(Request $request){
-        $this->validate($request, [
-            'kind' => 'required',
-        ]);
+    public function store(TaskRequest $request){
         $task = new Task();
         $task->kind = $request->kind;
         $task->memo = $request->memo;
@@ -36,10 +34,8 @@ class TasksController extends Controller
     }
 
 
-    public function update(Request $request, Task $task){
-        $this->validate($request, [
-            'kind' => 'required',
-        ]);
+    public function update(TaskRequest $request, Task $task){
+
         $task->kind = $request->kind;
         $task->memo = $request->memo;
 
